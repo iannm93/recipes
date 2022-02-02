@@ -34,7 +34,7 @@ function movieButton(event) {
 
 function movieSearch(movie) {
     // API query parameters, concat the value of whatever was passed into this function to the end of params
-    const URL_API = "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&language=en-US&page=1&include_adult=true&query=" + movie
+    const URL_API = "https://api.themoviedb.org/3/search/movie?api_key=" + API_KEY + "&language=en-US&page=1&include_adult=false&query=" + movie
     console.log(movie)
     var settings = {
         "async": true,
@@ -79,7 +79,7 @@ function movieSearch(movie) {
         console.log(response.results[0].release_date)
         console.log(response.results[0].overview)
     }).catch((error) => {
-        console.log(error)
+        console.log("make sure you're using live server extension if getting CORS", error)
     })
 
 }
