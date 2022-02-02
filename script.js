@@ -8,7 +8,7 @@ const plot = document.getElementById("overview")
 function emptyPosterAndPlot() {
     $(".poster").empty();
     $("#overview").empty();
-    $("#favorite-button").empty();
+    
 
 }
 
@@ -66,7 +66,6 @@ function movieSearch(movie) {
         let favoriteButton = document.createElement("button")
         favoriteButton.id = "favorite-button"
         favoriteButton.innerText = "favorite"
-        console.log(favoriteButton)
         // append button to DOM below poster
         poster.append(favoriteButton)
         // append the plot synopsis overview ID
@@ -78,8 +77,17 @@ function movieSearch(movie) {
         console.log(response.results[0].adult)
         console.log(response.results[0].release_date)
         console.log(response.results[0].overview)
+        console.log(favoriteButton)
+        favoriteButton.addEventListener("click", storeMovie)
+        
+        function storeMovie(){
+            console.log(favoriteButton)
+            $("#favorite-button").toggleClass("toggle")
+        
+        }
     }).catch((error) => {
         console.log("make sure you're using live server extension if getting CORS", error)
     })
 
 }
+    
