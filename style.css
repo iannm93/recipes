@@ -11,21 +11,27 @@
 #form{
    /* text-align: center; */
    /* padding-right: 250px; */
-   margin-left: 25%;
-   padding-right: 45px;
+   margin-left: 41.5%;
+   padding-right: 55px;
 
 }
 
 .tagline{
     text-align: center;
+    
 }
 
 #title{
     text-align: center;
+    margin-right: 50px;
 }
 
 .poster{
     
     text-align: center;
-    margin-left: 10%;
+    
+}
+
+#overview{
+    text-align: center;
 }
