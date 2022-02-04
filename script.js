@@ -58,8 +58,8 @@ function movieSearch(movie) {
         // assigning the src of said image element to the URL where the poster images are hosted and navigating to the poster in response obj
         posterImg.src = "https://www.themoviedb.org/t/p/original" + response.results[0].backdrop_path
         // dynamically set height and width of image to 400 (CHANGE THIS LATER)
-        posterImg.height = 400
-        posterImg.width = 400
+        posterImg.height = 500;
+        posterImg.width = 500;
         // appending the img element just dynamically created and sized to poster class in html
         poster.append(posterImg)
         // dynamically create a favorite button and assign it an ID

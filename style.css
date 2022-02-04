@@ -1,3 +1,31 @@
 .toggle{
     color: blue;
 }
+
+/* #button-form{
+        padding-left: 50px;
+   
+
+} */
+
+#form{
+   /* text-align: center; */
+   /* padding-right: 250px; */
+   margin-left: 25%;
+   padding-right: 45px;
+
+}
+
+.tagline{
+    text-align: center;
+}
+
+#title{
+    text-align: center;
+}
+
+.poster{
+    
+    text-align: center;
+    margin-left: 10%;
+}
