@@ -49,26 +49,53 @@ function popularMovies() {
 
     $.ajax(settings).then((response) => {
     console.log(response)
-    response.results.forEach(film=>{
-        console.log(film)
-        // create element for top 20 posters
+    for (let i  =0; i<response.results.length; i++){
+        console.log(response.results[i])
+        // create image element each iteration
         const postIMG = document.createElement("img")
-        // make the SRC of the image element just created url to film's poster
-        postIMG.src = "https://www.themoviedb.org/t/p/original" + film.poster_path
-        // give it an ID, height, width
+        // assign the src of creted image to response array at current itteration 
+        // to get url of poster
+        postIMG.src = "https://www.themoviedb.org/t/p/original" + response.results[i].poster_path
+        // assign ID, width, height
         postIMG.id = "top20"
-        postIMG.height = 400;
-        postIMG.width = 300;
-        // const voteAverage = document.createElement("p")
-        // console.log(film.vote_average)
-        // voteAverage.innerHTML = film.vote_average
+        postIMG.height= 400;
+        postIMG.width = 300
+        console.log(response.results[i].vote_average)
+        let voteAverage = document.createElement("div")
+        voteAverage.innerHTML = response.results[i].vote_average
+        voteAverage.style.position = "absolute"
+        voteAverage.style.color = "yellow"
+        voteAverage.style.backgroundColor ="black"
+        console.log(voteAverage)
 
+        // append the poster image to the DOM inside an empty div
+        emptyDiv.appendChild(voteAverage)
         emptyDiv.append(postIMG)
-        // emptyDiv.append(voteAverage)
+    }
+    // for each method below
+    // response.results.forEach(film=>{
+    //     console.log(film)
+    //     // create element for top 20 posters
+    //     const postIMG = document.createElement("img")
+    //     // make the SRC of the image element just created url to film's poster
+    //     postIMG.src = "https://www.themoviedb.org/t/p/original" + film.poster_path
+    //     // give it an ID, height, width
+    //     postIMG.id = "top20"
+    //     postIMG.height = 400;
+    //     postIMG.width = 300;
+    //     // const voteAverage = document.createElement("p")
+    //     // console.log(film.vote_average)
+    //     // voteAverage.innerHTML = film.vote_average
+
+    //     emptyDiv.append(postIMG)
+    //     // emptyDiv.append(voteAverage)
        
-        console.log(postIMG)
-    })
- 
+    //     console.log(postIMG)
+    // })
+    
+
+    // loop through response array
+    
     
     })
 }
