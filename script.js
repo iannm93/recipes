@@ -50,12 +50,22 @@ function popularMovies() {
     $.ajax(settings).then((response) => {
     console.log(response)
     response.results.forEach(film=>{
+        console.log(film)
+        // create element for top 20 posters
         const postIMG = document.createElement("img")
+        // make the SRC of the image element just created url to film's poster
         postIMG.src = "https://www.themoviedb.org/t/p/original" + film.poster_path
+        // give it an ID, height, width
+        postIMG.id = "top20"
         postIMG.height = 400;
         postIMG.width = 300;
-        emptyDiv.append(postIMG)
+        // const voteAverage = document.createElement("p")
+        // console.log(film.vote_average)
+        // voteAverage.innerHTML = film.vote_average
 
+        emptyDiv.append(postIMG)
+        // emptyDiv.append(voteAverage)
+       
         console.log(postIMG)
     })
  
