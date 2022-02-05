@@ -38,7 +38,7 @@ function movieButton(event) {
 function popularMovies() {
     let random = (Math.floor(Math.random() * 999))
     
-    const URL_FOR_POPULAR = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" + API2 + "&page=1&page=1"
+    const URL_FOR_POPULAR = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" + API2 + "&page=1,2"
     let settings = {
         "async": true,
         "crossDomain": true,
@@ -51,7 +51,7 @@ function popularMovies() {
     console.log(response)
     response.results.forEach(film=>{
         const postIMG = document.createElement("img")
-        postIMG.src = "https://www.themoviedb.org/t/p/original" + film.backdrop_path
+        postIMG.src = "https://www.themoviedb.org/t/p/original" + film.poster_path
         postIMG.height = 400;
         postIMG.width = 300;
         emptyDiv.append(postIMG)
@@ -88,7 +88,7 @@ function movieSearch(movie) {
         // dynamically creating an image element evevry time API is hit
         let posterImg = document.createElement('img')
         // assigning the src of said image element to the URL where the poster images are hosted and navigating to the poster in response obj
-        posterImg.src = "https://www.themoviedb.org/t/p/original" + response.results[0].backdrop_path
+        posterImg.src = "https://www.themoviedb.org/t/p/original" + response.results[0].poster_path
         // dynamically set height and width of image to 400 (CHANGE THIS LATER)
         posterImg.height = 400;
         posterImg.width = 300;
