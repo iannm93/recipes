@@ -29,7 +29,7 @@ body{
 
 }
 .film-info{
-    padding: 1rem;
+    padding: .8rem;
     color: white;
     /* THINK ABOUT THIS VVV */
     /* text-align: center; */
@@ -40,9 +40,9 @@ body{
 
 .film-info span {
     background-color: #22254b;
-    padding: 5px;
+    padding: 7px;
     font-size: 15px;
-    margin-left: 15rem;
+    /* margin-left: 5rem; */
 }
 
 
@@ -57,10 +57,10 @@ body{
 } */
 
 #form{
-   /* text-align: center; */
-   /* padding-right: 250px; */
-   /* margin-left: 41.5%; */
-   /* padding-right: 55px; */
+   text-align: center;
+   padding-right: 250px;
+   margin-left: 41.5%;
+   padding-right: 55px;
 
 }
 
@@ -87,4 +87,16 @@ body{
 }
 #emtpy-div{
     position: relative;
+}
+.votes{
+/* display:inline; */
+}
+.like-button{
+    height: 50px;
+    width:50px;
+    margin-left: 4.8rem;
+    /* display: inline; */
+}
+.movie-title{
+    text-align: center;
 }
