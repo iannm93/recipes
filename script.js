@@ -51,26 +51,37 @@ function popularMovies() {
     console.log(response)
     for (let i  =0; i<response.results.length; i++){
         console.log(response.results[i])
-        // create image element each iteration
-        const postIMG = document.createElement("img")
-        // assign the src of creted image to response array at current itteration 
-        // to get url of poster
-        postIMG.src = "https://www.themoviedb.org/t/p/original" + response.results[i].poster_path
-        // assign ID, width, height
-        postIMG.id = "top20"
-        postIMG.height= 400;
-        postIMG.width = 300
-        console.log(response.results[i].vote_average)
-        let voteAverage = document.createElement("div")
-        voteAverage.innerHTML = response.results[i].vote_average
-        voteAverage.style.position = "absolute"
-        voteAverage.style.color = "yellow"
-        voteAverage.style.backgroundColor ="black"
-        console.log(voteAverage)
+        const top20 = document.createElement("div")
+        top20.className="top20";
+        // top20.style.display = "inline-block"
+        top20.innerHTML = `
+        <div class="film">
+        <img src="${"https://www.themoviedb.org/t/p/original" + response.results[i].poster_path}" alt="poster-image">
+        <div class="film-info">
+            <h6>${response.results[i].title}</h6>
+            <span>${response.results[i].vote_average}</span>
+        </div>
+    </div>`
+        // // create image element each iteration
+        // const postIMG = document.createElement("img")
+        // // assign the src of creted image to response array at current itteration 
+        // // to get url of poster
+        // postIMG.src = "https://www.themoviedb.org/t/p/original" + response.results[i].poster_path
+        // // assign ID, width, height
+        // postIMG.id = "top20"
+        // postIMG.height= 400;
+        // postIMG.width = 300
+        // console.log(response.results[i].vote_average)
+        // let voteAverage = document.createElement("div")
+        // voteAverage.innerHTML = response.results[i].vote_average
+        // voteAverage.style.position = "absolute"
+        // voteAverage.style.color = "yellow"
+        // voteAverage.style.backgroundColor ="black"
+        // console.log(voteAverage)
 
         // append the poster image to the DOM inside an empty div
-        emptyDiv.appendChild(voteAverage)
-        emptyDiv.append(postIMG)
+        // emptyDiv.appendChild(voteAverage)
+        emptyDiv.append(top20)
     }
     // for each method below
     // response.results.forEach(film=>{
@@ -119,6 +130,7 @@ function movieSearch(movie) {
 
     $.ajax(settings).then((response) => {
         //
+     
         // query selector for the poster class and title ID
         const poster = document.querySelector(".poster")
         const title = document.getElementById("title")

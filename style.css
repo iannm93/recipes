@@ -1,6 +1,46 @@
 .toggle{
     color: blue;
 }
+body{
+    background-color: #22254b;
+}
+*{
+    box-sizing: border-box;
+}
+
+.top20{
+    margin: 3rem;
+    display: inline-block;
+}
+.film{
+    background-color: #373b69;
+    width: 300px;
+    border-radius: 2px;
+    box-shadow: 0 10px 8px rgba(0,0,0,0.2);
+    color: white;
+    /* margin: 3rem; */
+    /* display: inline-block; */
+    /* margin: 3rem; */
+    /* display: flex;
+    justify-content: space-between; */
+    
+
+}
+.film-info{
+    padding: 1rem;
+    
+    
+}
+
+.film-info span {
+    background-color: #22254b;
+    padding: 5px;
+}
+
+
+.film img{
+    max-width: 100%;
+}
 
 /* #button-form{
         padding-left: 50px;
@@ -11,8 +51,8 @@
 #form{
    /* text-align: center; */
    /* padding-right: 250px; */
-   margin-left: 41.5%;
-   padding-right: 55px;
+   /* margin-left: 41.5%; */
+   /* padding-right: 55px; */
 
 }
 
