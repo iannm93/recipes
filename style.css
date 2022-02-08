@@ -3,7 +3,7 @@
     
 }
 body{
-    background-color: #22254b;
+    background-color: #202020;
 }
 *{
     box-sizing: border-box;
@@ -16,7 +16,8 @@ body{
     align-items: center;
 }
 .film{
-    background-color: #373b69;
+    /* background-color: #373b69; */
+    background-color: #303030;
     width: 300px;
     border-radius: 2px;
     box-shadow: 0 10px 8px rgba(0,0,0,0.2);
@@ -41,8 +42,9 @@ body{
 
 .film-info span {
     box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    background-color: #202020;
 
-    background-color: #22254b;
+    /* background-color: #22254b; */
     padding: 7px;
     font-size: 15px;
     /* margin-left: 5rem; */
