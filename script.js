@@ -58,7 +58,7 @@ function popularMovies() {
         <div class="film">
         <img src="${"https://www.themoviedb.org/t/p/original" + response.results[i].poster_path}" alt="poster-image">
         <div class="film-info">
-            <h6>${response.results[i].title}</h6>
+            <h3>${response.results[i].title}</h3>
             <span>${response.results[i].vote_average}</span>
         </div>
     </div>`
