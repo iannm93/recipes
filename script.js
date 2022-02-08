@@ -51,9 +51,12 @@ function popularMovies() {
     console.log(response)
     for (let i  =0; i<response.results.length; i++){
         console.log(response.results[i])
+        // create div element for top 20 movies and add class name
         const top20 = document.createElement("div")
         top20.className="top20";
         // top20.style.display = "inline-block"
+        // assign the innerHTML to put each film inside it's own container
+        // populates with data from API
         top20.innerHTML = `
         <div class="film">
         <img src="${"https://www.themoviedb.org/t/p/original" + response.results[i].poster_path}" alt="poster-image">
@@ -65,6 +68,7 @@ function popularMovies() {
             
         </div>
     </div>`
+    emptyDiv.append(top20)
         // // create image element each iteration
         // const postIMG = document.createElement("img")
         // // assign the src of creted image to response array at current itteration 
@@ -84,7 +88,6 @@ function popularMovies() {
 
         // append the poster image to the DOM inside an empty div
         // emptyDiv.appendChild(voteAverage)
-        emptyDiv.append(top20)
     }
     // for each method below
     // response.results.forEach(film=>{
