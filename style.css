@@ -1,5 +1,6 @@
 .toggle{
-    color: blue;
+    background-color: #22254b;
+    
 }
 body{
     background-color: #22254b;
@@ -39,6 +40,8 @@ body{
 }
 
 .film-info span {
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+
     background-color: #22254b;
     padding: 7px;
     font-size: 15px;
