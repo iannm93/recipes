@@ -62,11 +62,11 @@ function popularMovies() {
         <img src="${"https://www.themoviedb.org/t/p/original" + response.results[i].poster_path}" alt="poster-image">
         <div class="film-info">
             <h4 class ="movie-title">${response.results[i].title}</h4>
-            <span class ="votes">${response.results[i].vote_average} </span>
-             <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
-
             
-        </div>
+            <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
+            <span class ="votes">${response.results[i].vote_average} </span>
+            
+            </div>
     </div>`
     emptyDiv.append(top20)
         // // create image element each iteration
