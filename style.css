@@ -16,6 +16,14 @@ body{
     display: inline-block;
     align-items: center;
 }
+
+.userSearch{
+    padding-left: 75px;
+    margin: 3rem;
+    display: inline-block;
+    align-items: center;
+}
+
 .film{
     /* background-color: #373b69; */
     background-color: #303030;
@@ -45,6 +53,15 @@ body{
 }
 
 .film-info span {
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    background-color: #202020;
+
+    /* background-color: #22254b; */
+    padding: 7px;
+    font-size: 15px;
+    margin-left: 15rem;
+}
+.votes{
     box-shadow: 0 3px 4px rgba(0,0,0,0.2);
     background-color: #202020;
 
