@@ -24,8 +24,8 @@ function movieButton(event) {
   emptyPosterAndPlot();
   // assign the value of the text input to variable
   let userInput = formValue.value;
-    emptyDiv.innerHTML="";
-      // pass whatever value was in the search bar to API function
+  emptyDiv.innerHTML = "";
+  // pass whatever value was in the search bar to API function
   movieSearch(userInput);
 }
 
@@ -56,10 +56,7 @@ function popularMovies() {
       // populates with data from API
       top20.innerHTML = `
         <div class="film">
-        <img src="${
-          "https://www.themoviedb.org/t/p/original" +
-          response.results[i].poster_path
-        }" alt="poster-image">
+        <img src="${"https://www.themoviedb.org/t/p/original" + response.results[i].poster_path}" alt="poster-image">
         <div class="film-info">
             <h4 class ="movie-title">${response.results[i].title}</h4>
             
@@ -69,7 +66,6 @@ function popularMovies() {
             </div>
     </div>`;
       emptyDiv.append(top20);
-     
     }
     // for each method below
     // response.results.forEach(film=>{
@@ -102,7 +98,7 @@ function movieSearch(movie) {
   const URL_API =
     "https://api.themoviedb.org/3/search/movie?api_key=" +
     API_KEY +
-    "&language=en-US&page=1&include_adult=false&query=" +
+    "&language=en-US&page=1&include_adult=true&query=" +
     movie;
   console.log(movie);
   var settings = {
@@ -116,7 +112,7 @@ function movieSearch(movie) {
   $.ajax(settings)
     .then((response) => {
       //
-      for (let i = 0; i <21; i++) {
+      for (let i = 0; i < 21; i++) {
         console.log(response.results[i]);
         // create div element for top 20 movies and add class name
         const userSearch = document.createElement("div");
@@ -128,21 +124,17 @@ function movieSearch(movie) {
             <div class="film">
             <img src="${
               "https://www.themoviedb.org/t/p/original" +
-              response.results[i].poster_path
-            }" alt="poster-image">
+              response.results[i].poster_path}" alt="poster-image">
             <div class="film-info">
                 <h4 class ="movie-title">${response.results[i].title}</h4>
+                <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
                 <span class ="votes">${response.results[i].vote_average} </span>
-                 <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
     
                 
             </div>
         </div>`;
         emptyDiv.append(userSearch);
       }
-
-      
- 
     })
     .catch((error) => {
       console.log(
