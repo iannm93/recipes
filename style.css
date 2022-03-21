@@ -83,8 +83,9 @@ body{
 } */
 
 #form{
-   text-align: center;
-   padding-right: 250px;
+    border-radius:20px;
+   /* /* text-align: center; */
+   /* padding-right: 250px; */
    margin-left: 41.5%;
    padding-right: 55px;
 
