@@ -26,14 +26,7 @@ function movieButton(event) {
   let userInput = formValue.value;
   emptyDiv.innerHTML = "";
   // pass whatever value was in the search bar to API function
-  // fetch("https://api.themoviedb.org/3/search/movie?api_key=" +
-  //   API_KEY +
-  //   "&language=en-US&page=1&include_adult=true&query=" +
-  //   userInput)
-  //   .then(response => response.json())
-  //   .then(data => console.log(data));
   movieSearch(userInput);
-
 }
 
 // function to return  popular movies to append to the dom on load of the site
@@ -51,16 +44,10 @@ function popularMovies() {
     method: "GET",
   };
 
-
-
-
-
-
-
   $.ajax(settings).then((response) => {
     console.log(response);
-    for (let i = 0; i < response.results.length; i++) {
-
+    // i < response.results.length VVVVVV
+    for (let i = 0; i < 18; i++) {
       console.log(response.results[i]);
       // create div element for top 20 movies and add class name
       const top20 = document.createElement("div");
@@ -123,11 +110,10 @@ function movieSearch(movie) {
     headers: {},
   };
 
- 
   $.ajax(settings)
     .then((response) => {
       //
-      for (let i = 0; i < 21; i++) {
+      for (let i = 0; i < 18; i++) {
         console.log(response.results[i]);
         // create div element for top 20 movies and add class name
         const userSearch = document.createElement("div");
@@ -137,8 +123,9 @@ function movieSearch(movie) {
         // populates with data from API
         userSearch.innerHTML = `
             <div class="film">
-            <img src="${"https://www.themoviedb.org/t/p/original" +
-          response.results[i].poster_path}" alt="poster-image">
+            <img src="${
+              "https://www.themoviedb.org/t/p/original" +
+              response.results[i].poster_path}" alt="poster-image">
             <div class="film-info">
                 <h4 class ="movie-title">${response.results[i].title}</h4>
                 <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
@@ -148,12 +135,15 @@ function movieSearch(movie) {
             </div>
         </div>`;
         emptyDiv.append(userSearch);
-
       }
     })
-
+    .catch((error) => {
+      console.log(
+        "make sure you're using live server extension if getting CORS",
+        error
+      );
+    });
 }
-
 array = [5, 2, 3];
 function sort(array) {
   for (i = 0; i < array.length; i++) {
