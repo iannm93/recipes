@@ -2,6 +2,12 @@
     background-color: #22254b;
     
 }
+.container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
 body{
     background-color: #202020;
     /* background-color: #22254b; */
@@ -11,14 +17,14 @@ body{
 }
 
 .top20{
-    padding-left: 75px;
+
     margin: 3rem;
     display: inline-block;
     align-items: center;
 }
 
 .userSearch{
-    padding-left: 75px;
+    /* padding-left: 75px; */
     margin: 3rem;
     display: inline-block;
     align-items: center;
@@ -68,7 +74,7 @@ body{
     /* background-color: #22254b; */
     padding: 7px;
     font-size: 15px;
-    margin-left: 15rem;
+    /* margin-left: 15rem; */
 }
 
 
@@ -83,23 +89,47 @@ body{
 } */
 
 #form{
-    border-radius:20px;
-   /* /* text-align: center; */
-   /* padding-right: 250px; */
-   margin-left: 41.5%;
-   padding-right: 55px;
+    border-radius: 20px;
+    padding: 5px;
+    /* padding-right: 250px; */
+    /* margin-left: 41.5%; */
+    padding-right: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    color: white;
+    margin-top: 15px;
 
 }
-
+#search-movie{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    height: 40px;
+    width: 40px;
+    color: white;
+    /* background-color: #485461; */
+    background-image: aliceblue;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    border-radius: 20px;
+}
 .tagline{
     text-align: center;
     
 }
-
+#search-movie:hover{
+    background-color: #5b6467;
+    background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+}
 #title{
     text-align: center;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     color: white;
+    margin-bottom: 0;
 }
 
 .poster{
@@ -121,7 +151,7 @@ body{
 .like-button{
     height: 50px;
     width:50px;
-    margin-left: 7.25rem;
+    /* margin-left: 7.25rem; */
     /* margin: auto; */
     /* display: inline; */
 }
@@ -129,3 +159,4 @@ body{
     text-align: center;
     font-size: 15.5px;
 }
+

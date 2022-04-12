@@ -46,7 +46,8 @@ function popularMovies() {
 
   $.ajax(settings).then((response) => {
     console.log(response);
-    for (let i = 0; i < response.results.length; i++) {
+    // i < response.results.length VVVVVV
+    for (let i = 0; i < 18; i++) {
       console.log(response.results[i]);
       // create div element for top 20 movies and add class name
       const top20 = document.createElement("div");
@@ -112,7 +113,7 @@ function movieSearch(movie) {
   $.ajax(settings)
     .then((response) => {
       //
-      for (let i = 0; i < 21; i++) {
+      for (let i = 0; i < 18; i++) {
         console.log(response.results[i]);
         // create div element for top 20 movies and add class name
         const userSearch = document.createElement("div");
