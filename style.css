@@ -1,0 +1,131 @@
+.toggle{
+    background-color: #22254b;
+    
+}
+body{
+    background-color: #202020;
+    /* background-color: #22254b; */
+}
+*{
+    box-sizing: border-box;
+}
+
+.top20{
+    padding-left: 75px;
+    margin: 3rem;
+    display: inline-block;
+    align-items: center;
+}
+
+.userSearch{
+    padding-left: 75px;
+    margin: 3rem;
+    display: inline-block;
+    align-items: center;
+}
+
+.film{
+    /* background-color: #373b69; */
+    background-color: #303030;
+    width: 300px;
+    border-radius: 2px;
+    box-shadow: 0 10px 8px rgba(0,0,0,0.2);
+    
+    
+    /* display: inline-block; */
+    /* margin: 3rem; */
+    /* display: flex;
+    justify-content: space-between; */
+    
+
+}
+.film-info{
+    padding: .8rem;
+    color: white;
+    /* THINK ABOUT THIS VVV */
+    /* text-align: center; */
+  
+    
+    
+}
+.film-info h4{
+    margin: 0;
+}
+
+.film-info span {
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    background-color: #202020;
+
+    /* background-color: #22254b; */
+    padding: 7px;
+    font-size: 15px;
+    margin-left: 15rem;
+}
+.votes{
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+    background-color: #202020;
+
+    /* background-color: #22254b; */
+    padding: 7px;
+    font-size: 15px;
+    margin-left: 15rem;
+}
+
+
+.film img{
+    max-width: 100%;
+}
+
+/* #button-form{
+        padding-left: 50px;
+   
+
+} */
+
+#form{
+    border-radius:20px;
+   /* /* text-align: center; */
+   /* padding-right: 250px; */
+   margin-left: 41.5%;
+   padding-right: 55px;
+
+}
+
+.tagline{
+    text-align: center;
+    
+}
+
+#title{
+    text-align: center;
+    margin-right: 50px;
+    color: white;
+}
+
+.poster{
+    
+    text-align: center;
+    
+}
+
+#overview{
+    text-align: center;
+    color: white;
+}
+#emtpy-div{
+    position: relative;
+}
+.votes{
+/* display:inline; */
+}
+.like-button{
+    height: 50px;
+    width:50px;
+    margin-left: 7.25rem;
+    /* margin: auto; */
+    /* display: inline; */
+}
+.movie-title{
+    text-align: center;
+    font-size: 15.5px;
+}
