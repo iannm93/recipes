@@ -24,6 +24,10 @@ function movieButton(event) {
   emptyPosterAndPlot();
   // assign the value of the text input to variable
   let userInput = formValue.value;
+  if (userInput === ""){
+    confirm("please enter a movie or TV show in order to search")
+    popularMovies();
+  }
   emptyDiv.innerHTML = "";
   // pass whatever value was in the search bar to API function
   movieSearch(userInput);
