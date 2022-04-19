@@ -30,9 +30,10 @@ function movieButton(event) {
 }
 
 // function to return  popular movies to append to the dom on load of the site
-function popularMovies() {
-  let random = Math.floor(Math.random() * 999);
+$(document).ready(function(){
 
+  let random = Math.floor(Math.random() * 999);
+  
   const URL_FOR_POPULAR =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" +
   API2 +
@@ -65,10 +66,11 @@ function popularMovies() {
             <span class ="votes">${response.results[i].vote_average} </span>
             
             </div>
-    </div>`;
-      emptyDiv.append(top20);
+            </div>`;
+            emptyDiv.append(top20);
     }
 
+  })
     
     // for each method below
     // response.results.forEach(film=>{
@@ -93,7 +95,7 @@ function popularMovies() {
 
     // loop through response array
   });
-}
+
 // function popularMoviestwo() {
 //   let random = Math.floor(Math.random() * 999);
 
@@ -159,7 +161,9 @@ function popularMovies() {
 //   });
 // }
 // popularMoviestwo();
-popularMovies();
+
+
+// popularMovies();
 
 function movieSearch(movie) {
   // API query parameters, concat the value of whatever was passed into this function to the end of params
