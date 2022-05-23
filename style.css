@@ -228,8 +228,10 @@ body{
 /* display:inline; */
 }
 .like-button{
+    padding: 10px;
     height: 50px;
     width:50px;
+
     /* margin-left: 7.25rem; */
     /* margin: auto; */
     /* display: inline; */
@@ -244,6 +246,22 @@ display: flex;
 flex-direction: row;
 }
 
+#justify{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#heart{
+    height: 30px;
+    width: 30px;
+    
+}
+#heart-container{
+    padding: 10px;
+
+}
 #return {
 
     /* margin-left: 0; */

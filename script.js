@@ -7,6 +7,7 @@ const formValue = document.getElementById("form");
 const plot = document.getElementById("overview");
 const emptyDiv = document.getElementById("empty-div");
 const returnTo20 = document.getElementById("return");
+
 // const URL_API = "https://api.themoviedb.org/3/search/movie?api_key="+ API_KEY + "&language=en-US&page=1&include_adult=false&query=split"
 let searchMovie = document.querySelector("#search-movie");
 // waiting for a click on the search movie button
@@ -16,7 +17,7 @@ searchMovie.addEventListener("click", movieButton);
 function movieButton(event) {
   // prevent default stops the browser from automatically resetting the value of the form every time it is interacted with
   event.preventDefault();
-
+  
   // assign the value of the text input to variable
   let userInput = formValue.value;
   if (userInput === "") {
@@ -28,19 +29,20 @@ function movieButton(event) {
 
 // function to return  popular movies to append to the dom on load of the site
 $(document).ready(function () {
+  
   let random = Math.floor(Math.random() * 999);
-
+  
   const URL_FOR_POPULAR =
-    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" +
-    API2 +
-    "&page=1";
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=" +
+  API2 +
+  "&page=1";
   let settings = {
     async: true,
     crossDomain: true,
     url: URL_FOR_POPULAR,
     method: "GET",
   };
-
+  
   $.ajax(settings).then((response) => {
     // i < response.results.length VVVVVV
     console.log(response);
@@ -51,27 +53,71 @@ $(document).ready(function () {
       // top20.style.display = "inline-block"
       // assign the innerHTML to put each film inside it's own container
       // populates with data from API
-
+      
       top20.innerHTML = `
       <div class="film">
       <img src="${
         "https://www.themoviedb.org/t/p/original" +
         response.results[i].poster_path
       }" alt="poster-image">
-        <div class="film-info">
-        <h4 class ="movie-title">${response.results[i].title}</h4>
-        
-        <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
-        <span class ="votes">${response.results[i].vote_average} </span>
-        
-        </div>
-            </div>`;
+      <div class="film-info">
+      <h4 class ="movie-title">${response.results[i].title}</h4>
+      <div id="heart-container">
+    
+      <img id = "heart" src = "https://cdn-icons.flaticon.com/png/512/707/premium/707680.png?token=exp=1653341843~hmac=ad2dc8f7181c60a502cfb240d2212df0">
+      </div>
+    
+      
+      
+      <span class ="votes">${response.results[i].vote_average} </span>
+      
+      </div>
+      </div>`;
+
+      top20.setAttribute("data-index", i)
       emptyDiv.append(top20);
     }
+    // let movieTitle = document.querySelector(".movie-title")
+    // let justify = document.getElementById("justify")
+    let newHeart = function(event){
+      event.preventDefault();
+      
+      let heart = event.target
+      let old = "https://cdn-icons.flaticon.com/png/512/707/premium/707680.png?token=exp=1653341843~hmac=ad2dc8f7181c60a502cfb240d2212df0"
+      console.log(old)
+      console.log(heart.src)
+      if (heart.src === old){
+        console.log("works")
+        heart.src = "https://cdn-icons-png.flaticon.com/512/535/535234.png"
+      }
+    //  console.log(heart.getAttribute("src"))
+      // console.log(heart.getElementByTagName[0].id)
+      // console.log(heart.src)
+      // console.log(heart)
+      // console.log(heart)
+    //  if(heart.src = "https://cdn-icons.flaticon.com/png/512/707/premium/707680.png?token=exp=1653341843~hmac=ad2dc8f7181c60a502cfb240d2212df0"){
+    //    heart.innerHTML = `<img id = "heart" src = "https://cdn-icons-png.flaticon.com/512/535/535234.png">`
+    //   } 
+      // console.log(Number(window.getComputedStyle(heart).getPropertyValue("width")))
+      // heart.remove();
+      // movieTitle.append
+      // heart.remove()
+      // console.log(heart.textContent)
+  
+      // heart.innerHTML = `<i  class="fa-solid fa-heart"></i>`
+    
+    
+    
+    }
+    
+    emptyDiv.addEventListener("click", newHeart)
+  
+    // console.log(justify)
   });
-
-
+  
+  
 });
+// const justify = document.getElementById("justify")
 
 
 
@@ -127,6 +173,7 @@ function movieSearch(movie) {
           emptyDiv.append(userSearch);
         }
       }
+      
       // prevention for if user enters a string that has no return from API, just uses their last seach
       let last = userSearches.length - 2;
       console.log(userSearches[last])
@@ -179,19 +226,6 @@ sort(array);
 //     console.log(response);
 //   });
 // });
-let token =
-  "Bearer L5LP46_Y5o-XZR6vdKcPk0t6_gS6id7Kg8lfsBsWj1VVlhH9NeddjVJcCzfsfDm6kMJIN7K0viaoh2Nf7VcTRlmjOLmArJyHcsuJtf7bFsd2HG9gw10JcSqQKKdfYnYx";
-let url =
-  "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/law-office-of-scott-c-harris-rancho-santa-fe";
-const options = {
-  method: "GET",
-  headers: {
-    Authorization: token,
-  },
-};
-fetch(url, options).then((res) => {
-  console.log(res);
-});
 
 function popularMovies() {
   const URL_FOR_POPULAR =
@@ -236,3 +270,14 @@ function popularMovies() {
 returnTo20.addEventListener("click", function () {
   popularMovies();
 });
+
+// console.log(justify)
+
+//  target.onload = functionRef;
+// window.onload = function(){
+//   test();
+// }
+
+// (async function() {
+//   await newHeart();
+// })()
