@@ -50,6 +50,8 @@
 #search-movie:hover{
     background-color: #5b6467;
     background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 #title{
     text-align: center;
@@ -279,6 +281,12 @@ flex-direction: row;
 #heart-container{
     padding: 10px;
 
+}
+#return:hover{
+    background-color: #5b6467;
+    background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 #return {
 

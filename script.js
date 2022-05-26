@@ -157,19 +157,24 @@ function movieSearch(movie) {
         // populates with data from API
         if (response.results.length != 0) {
           userSearch.innerHTML = `
-        <div class="film">
-        <img src="${
-          "https://www.themoviedb.org/t/p/original" +
-          response.results[i].poster_path
-        }" alt="poster-image">
-        <div class="film-info">
-        <h4 class ="movie-title">${response.results[i].title}</h4>
-        <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
-        <span class ="votes">${response.results[i].vote_average} </span>
+          <div class="film">
+          <img src="${
+            "https://www.themoviedb.org/t/p/original" +
+            response.results[i].poster_path
+          }" alt="poster-image">
+          <div class="film-info">
+          <h4 class ="movie-title">${response.results[i].title}</h4>
+          <div id="heart-container">
         
-        
-        </div>
-        </div>`;
+          <img id = "heart" src = "https://cdn-icons.flaticon.com/png/512/2961/premium/2961957.png?token=exp=1653543116~hmac=4a05dcbd4d189aab27a845d83419cf1d">
+          </div>
+          <div id = "corn-container">
+          <img id = "popcorn" src = "https://cdn-icons-png.flaticon.com/512/2107/2107957.png">
+          <p class ="votes">${response.results[i].vote_average} </p>
+          </div>
+          </div>
+          </div>
+          </div>`;;
           emptyDiv.append(userSearch);
         }
       }
@@ -256,19 +261,23 @@ function popularMovies() {
       }" alt="poster-image">
       <div class="film-info">
       <h4 class ="movie-title">${response.results[i].title}</h4>
-      
-      <img class="like-button"src="https://cdn2.iconfinder.com/data/icons/media-player-ui/512/Media-Icon-25-512.png">
-      <span class ="votes">${response.results[i].vote_average} </span>
-      
+      <div id="heart-container">
+    
+      <img id = "heart" src = "https://cdn-icons.flaticon.com/png/512/2961/premium/2961957.png?token=exp=1653543116~hmac=4a05dcbd4d189aab27a845d83419cf1d">
+      </div>
+      <div id = "corn-container">
+      <img id = "popcorn" src = "https://cdn-icons-png.flaticon.com/512/2107/2107957.png">
+      <p class ="votes">${response.results[i].vote_average} </p>
+      </div>
+      </div>
       </div>
       </div>`;
       emptyDiv.append(top20);
     }
   });
 }
-returnTo20.addEventListener("click", function () {
-  popularMovies();
-});
+returnTo20.addEventListener("click", popularMovies)
+
 
 // console.log(justify)
 
