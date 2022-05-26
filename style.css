@@ -266,8 +266,12 @@ flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+#heart:hover{
+    cursor: pointer;
+}
 
 #heart{
+
     height: 30px;
     width: 30px;
     
