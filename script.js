@@ -65,7 +65,7 @@ $(document).ready(function () {
       <img id = "heart" src = "https://cdn-icons.flaticon.com/png/512/2961/premium/2961957.png?token=exp=1653543116~hmac=4a05dcbd4d189aab27a845d83419cf1d">
       </div>
       <div id = "corn-container">
-      <img id = "popcorn" src = "https://cdn-icons-png.flaticon.com/512/3754/3754009.png">
+      <img id = "popcorn" src = "https://cdn-icons-png.flaticon.com/512/2107/2107957.png">
       <p class ="votes">${response.results[i].vote_average} </p>
       </div>
       </div>

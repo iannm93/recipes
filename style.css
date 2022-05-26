@@ -165,10 +165,10 @@ body{
 }
 
 #popcorn{
-    margin-top: 12px;
-    height:37.5px;
+    margin: 14px 7px 0px 0px;
+    height:30px;
  
-    width: 37.5px;
+    width: 30px;
 }
 
 .film img{
