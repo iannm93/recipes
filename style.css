@@ -38,6 +38,14 @@
 .tagline{
     text-align: center;
     
+
+}
+
+#corn-container{
+    display: flex;
+    flex-direction: row;
+    /* flex-direction: row; */
+    justify-content: end;
 }
 #search-movie:hover{
     background-color: #5b6467;
@@ -156,6 +164,12 @@ body{
     /* margin-left: 15rem; */
 }
 
+#popcorn{
+    margin-top: 12px;
+    height:37.5px;
+ 
+    width: 37.5px;
+}
 
 .film img{
     max-width: 100%;
